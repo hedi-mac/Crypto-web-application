@@ -1,0 +1,22 @@
+.stats-cards {
+  .mat-card {
+    overflow: hidden;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.loading-text {
+  color: #333333;
+  font-size: 18px;
+  fill: #333333;
+}
+
+.mat-spinner {
+  ::ng-deep circle {
+    stroke:rgba(124, 181, 236, 0.9) !important;
+  }
+}
+

@@ -1,0 +1,146 @@
+
+<div fxLayout="container" fxLayoutGap="10px">
+    <div fxFlex="70">
+        <div class="mat-elevation-z2">
+            <div fxLayout="container">
+                <form [formGroup]="sliderForm" fxFlex="18" class="cont pt-4">
+                    <div class="h-100 pl-2">
+                        <ng5-slider class="custom-slider p-0 m-0" (userChangeEnd)="valueChange($event);valueChange($event);" [options]="options" formControlName="sliderControl"></ng5-slider>
+                    </div>
+                </form>
+
+
+                <div fxFlex="82">
+                    <div *ngIf="tweetsLength == 0" class="w-100 h-100 p-2 pt-4 pb-4">
+                        <div class="nodata h-100 p-2 pl-5 d-flex align-items-center">
+                            No Tweets &nbsp; <i class="fa-brands fa-twitter" style="color:#1d9cf099;"></i> &nbsp; for this periode ! ! !
+                        </div>
+                    </div>
+                    <table *ngIf="tweetsLength != 0" mat-table matSort [dataSource]="tweetsDataSource" #sortTweets="matSort" >
+                        <ng-container matColumnDef="text">
+                            <th mat-header-cell *matHeaderCellDef style="font-size:110%;"> Tweets <i class="fa-brands fa-twitter" style="color:#1d9cf099;"></i> </th>
+                            <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="created_at">
+                            <th mat-header-cell *matHeaderCellDef> Date </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.created_at | date:"dd/MM/yy ' ' h:mm" }} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="score">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+                            <td mat-cell *matCellDef="let element"> {{ element.score.toString().length > 4 ? element.score.toString().substr(0, element.score.toString().length-4) : element.score.toString()}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="label">
+                            <th mat-header-cell *matHeaderCellDef class="trend" mat-sort-header> Trend </th>
+                            <td mat-cell *matCellDef="let element">
+                                <mat-icon *ngIf="element.label == 'POSITIVE'" style="color:rgb(0, 128, 0, 0.9);font-size:230%;">trending_up</mat-icon> 
+                                <mat-icon *ngIf="element.label == 'NEGATIVE'" style="color:rgba(67, 67, 72, 0.4);font-size:230%;">trending_down</mat-icon> 
+                            </td>
+                        </ng-container>
+        
+                        <tr mat-header-row *matHeaderRowDef="tweetsDisplayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: tweetsDisplayedColumns;"></tr>
+                    </table>
+        
+                    <mat-paginator #tweetsPaginator="matPaginator" [pageSizeOptions]="[5]" [ngClass]="tweetsLength == 0?'d-none':''"></mat-paginator>
+                </div>
+            </div>
+            
+
+            
+        </div>
+
+    </div>
+    <div fxFlex="30" class="container h-100 mat-elevation-z2">
+        <div fxLayout="container" class="align-items-center pt-1" style="height:40px;">
+            <div fxFlex="10" class="mr-2">
+                <img style="height:23px;width:24px;" [src]="iconUrl+'/color/'+crypto.toLowerCase()+'.png'"/>
+            </div>
+            <div *ngIf="cryptocurrencyName" fxFlex="90"style="font-size:105%;font-weight:450;">
+                {{ cryptocurrencyName.substr(0, cryptocurrencyName.indexOf('-')) }}
+            </div>
+        </div>
+        <div class="row pl-2 pr-2">
+            <app-widget-pie *ngIf="pieChart != undefined" class="w-100 h-100 mb-2" [title]="title" [data]="pieChart"></app-widget-pie>
+            <div *ngIf="pieChart == undefined" class="w-100 h-100 mb-2">
+                <div class="container pt-4" style="height:242px">
+                    <div class="row d-flex justify-content-center align-items-center pt-3 pb-4">
+                        <mat-spinner strokeWidth="7"></mat-spinner>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center pt-4 loading-text">Loading . . . Please Wait</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<mat-divider class="mt-2 mb-2"></mat-divider>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="100">
+        <div class="mat-elevation-z2">
+            <div fxLayout="container">
+                <form [formGroup]="sliderFormArticles" fxFlex="13" class="cont pt-4">
+                    <div class="h-100 pl-2">
+                        <ng5-slider class="custom-slider p-0 m-0" (mouseup)="valueChangeArticles($event)" [options]="optionsArticles" formControlName="sliderControlArticles"></ng5-slider>
+                    </div>
+                </form>
+
+
+                    <div fxFlex="100">
+                        <div *ngIf="articlesLength == 0" class="h-100 w-100 p-2 ml-5 pl-5">
+                            <div class="nodata h-100 w-100 p-2 pl-5 pr-5 d-flex align-items-center">
+                                <div class="w-100 pr-5 pl-5">
+                                    No Articles &nbsp; <i class="fa-solid fa-newspaper" style="color:#8085e999;"></i> &nbsp; for this periode ! ! !
+                                </div>
+                            </div>
+                        </div> 
+                        <table *ngIf="articlesLength != 0" mat-table matSort [dataSource]="articlesDataSource"  #sortArticles="matSort" class="p-0 w-100">
+
+                            <ng-container matColumnDef="text">
+                                <th mat-header-cell *matHeaderCellDef style="font-size:110%;"> Articles <i class="fa-solid fa-newspaper" style="color:#8085e999;"></i> </th>
+                                <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="created_at">
+                                <th mat-header-cell *matHeaderCellDef> Date </th>
+                                <td mat-cell *matCellDef="let element"> {{ element.created_at | date:"dd/MM/yyyy ' ' h:mm" }} </td>
+                            </ng-container>
+    
+                            <ng-container matColumnDef="score">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
+                                <td mat-cell *matCellDef="let element"> {{element.score.toString().substr(0, element.score.toString().length-4)}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="label">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Trend </th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <mat-icon *ngIf="element.label == 'POSITIVE'" style="color:rgb(0, 128, 0, 0.9);font-size:230%;">trending_up</mat-icon> 
+                                    <mat-icon *ngIf="element.label == 'NEGATIVE'" style="color:rgba(67, 67, 72, 0.4);font-size:230%;">trending_down</mat-icon> 
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="url">
+                                <th mat-header-cell *matHeaderCellDef> Link </th>
+                                <td mat-cell *matCellDef="let element"> 
+                                    <a href="{{ url+'/'+element.short_url }}" target="_blank" (click)="linkClick(element.id);">
+                                        {{element.url.substr(8, 45) }} {{element.url.length >= 45 ? '...' : ''}}
+                                    </a>
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="visits">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Visits </th>
+                                <td mat-cell *matCellDef="let element"> {{element.visits}} </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="articlesDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: articlesDisplayedColumns;"></tr>
+                        </table>
+                        <mat-paginator #articlesPaginator="matPaginator" [pageSizeOptions]="[5]" [ngClass]="articlesLength == 0?'d-none':''"></mat-paginator>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+    
+</div>

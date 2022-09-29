@@ -1,0 +1,42 @@
+<div class="mat-elevation-z2">
+    <app-widget-area *ngIf="tab && duration" type="all" [data]="tab" [nb]="duration"></app-widget-area>
+    <div *ngIf="!tab" class="w-100 h-100">
+        <div class="container pt-4" style="height: 380px">
+            <div class="row d-flex justify-content-center align-items-center pt-3 pb-4">
+                <mat-spinner strokeWidth="7"></mat-spinner>
+            </div>
+            <div class="row d-flex justify-content-center align-items-center pt-4 loading-text">Loading . . . Please Wait</div>
+        </div>
+    </div>
+</div>
+
+<mat-divider class="mt-2 mb-2"></mat-divider>
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="50">
+        <div class="mat-elevation-z2">
+            <app-widget-area *ngIf="tab1 && duration" type="tweets" [data]="tab1" [nb]="duration"></app-widget-area>
+            <div *ngIf="!tab1" class="w-100 h-100">
+                <div class="container pt-4" style="height: 380px">
+                    <div class="row d-flex justify-content-center align-items-center pt-3 pb-4">
+                        <mat-spinner strokeWidth="7"></mat-spinner>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center pt-4 loading-text">Loading . . . Please Wait</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="50">
+        <div class="mat-elevation-z2">
+            <app-widget-area *ngIf="tab2 && duration" type="articles" [data]="tab2" [nb]="duration"></app-widget-area>
+            <div *ngIf="!tab2" class="w-100 h-100">
+                <div class="container pt-4" style="height: 380px">
+                    <div class="row d-flex justify-content-center align-items-center pt-3 pb-4">
+                        <mat-spinner strokeWidth="7"></mat-spinner>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center pt-4 loading-text">Loading . . . Please Wait</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

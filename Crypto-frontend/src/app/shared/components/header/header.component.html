@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="d-flex justify-content-center" fxShow="true" fxHide.lt-md="true">
+            <span class="title clickable" routerLink="/"> <i class="fa-solid fa-coins under-icon"></i> Cry<span class="under-title">pto</span></span>
+            <a mat-button routerLinkActive="active" routerLink="/stats/weekly" #rla="routerLinkActive">Week's Stats</a>
+            <a mat-button routerLinkActive="active" routerLink="/stats/monthly" #rla="routerLinkActive">Month's Stats</a>
+        </div>
+        
+        
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-icon-button routerLink="/infos/1">
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

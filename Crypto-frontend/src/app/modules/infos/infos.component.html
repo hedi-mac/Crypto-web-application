@@ -1,0 +1,23 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="center" class="stats-cards">
+    <mat-card fxFlex="0 0 94%" class="pt-0" fxFlex.lt-sm="100%" class="d-flex align-items-center justify-content-center" style="height:340px;">
+        <div *ngIf="type == 1" class="pt-2 pb-5">
+            <span class="info">
+                Millions of crypto articles are published every day. While there is a lot of knowledge hidden in these articles, it is actually impossible to read them all. Even if you only focus on a specific area, it can still be difficult to find all relevant articles and read them to gain valuable insights.
+            </span>
+            <span class="title clickable d-flex justify-content-center mt-5" routerLink="/"> <i class="fa-solid fa-coins under-icon"></i> Cry<span class="under-title">pto</span></span><br/>
+            <div  class="info w-100" style="text-align:center;">is a website collecting reviews of cryptocurrencies and processing them to allowing its users <br/> know the trend of cryptocurrencies with <span class="info-imp"> less reading </span> efforts.</div>
+        </div>
+        <div *ngIf="type != 1" class="pt-2 pb-5" >
+            <span  class="info">Thanks to the lion <span class="info-imp"> Hedi Machat </span> </span>
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <!--
+                    <div class="example-button-container">
+                        <button class="btn btn-outline-warning"><i class="fa fa-mail"></i></button>
+                    </div>
+                    -->
+                </li>
+            </ul>
+        </div>
+    </mat-card>
+</div>

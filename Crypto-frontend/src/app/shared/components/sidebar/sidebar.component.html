@@ -1,0 +1,30 @@
+
+        <mat-nav-list opened="true">
+            <h2 matSubheader>Cryptocurrencies</h2>
+            <span *ngFor="let crypto of cryptocurrencies">
+                <a mat-list-item routerLinkActive="active" class="sidebar-item" [routerLink]="['/reviews/', crypto.abbreviation]" #rla="routerLinkActive">
+                    <img class="full-width" *ngIf="!(rla.isActive)" style="height:22px;width:23px;" [src]="iconUrl+'/black/'+crypto.abbreviation.toLowerCase()+'.png'"/>
+                    <img *ngIf="rla.isActive" style="height:22px;width:23px;" [src]="iconUrl+'/color/'+crypto.abbreviation.toLowerCase()+'.png'"/>
+                    <div class="w-75">
+                        &nbsp;&nbsp;{{ crypto.name }}
+                    </div>
+                    
+                </a>
+            </span>
+            <mat-divider></mat-divider>
+        
+            <h2 matSubheader>Tools</h2>
+        
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/infos/2">
+                <mat-icon>import_contacts</mat-icon>
+                Contacts
+            </a>
+        
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/infos/2">
+                <mat-icon>contact_phone</mat-icon>
+                Leads
+            </a>
+        
+        </mat-nav-list>
+
+

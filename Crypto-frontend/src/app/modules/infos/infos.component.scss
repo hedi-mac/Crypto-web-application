@@ -1,0 +1,115 @@
+
+.mat-card {
+    margin:0.5%;
+}
+
+.loading-text {
+    color: #333333;
+    font-size: 18px;
+    fill: #333333;
+  }
+  
+  .mat-spinner {
+    ::ng-deep circle {
+      stroke:rgba(124, 181, 236, 0.9) !important;
+    }
+  }
+  
+.info {
+  font-weight: 350;
+  color:rgba(67, 67, 72);
+}
+
+.info-imp {
+  font-weight: 400;
+  color: #333333;
+}
+
+
+.title{
+  -webkit-text-stroke: 0.35px black;
+  text-shadow:
+      2px 2px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+      color:white; 
+      font-size:120%;
+      margin-left:2%;
+      margin-right:2%;
+}
+.under-title {
+  -webkit-text-stroke: 0.2px rgba(0, 0, 0, 0.349);
+  color: #ff9800;
+  text-shadow:
+      2px 2px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+      margin-left:2px;
+}
+
+.under-icon {
+  -webkit-text-stroke: 0.05px rgba(0, 0, 0, 0.349);
+  color: #ff9800;
+
+      font-size:95%;
+      padding-left:-10px;
+}
+
+.clickable {
+   cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+}
+
+.mat-toolbar.mat-primary {
+  background: #ffc10720;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 0px 8px #00000099;
+  border-bottom: 0.65px solid #00000010;
+  z-index: 5;
+}
+
+.mat-toolbar-row div {
+  width:100%;
+  text-align:center;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}

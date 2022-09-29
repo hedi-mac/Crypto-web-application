@@ -1,0 +1,26 @@
+
+.mat-card {
+    margin:0.5%;
+}
+
+.loading-text {
+    color: #333333;
+    font-size: 18px;
+    fill: #333333;
+  }
+  
+  .mat-spinner {
+    ::ng-deep circle {
+      stroke:rgba(124, 181, 236, 0.9) !important;
+    }
+  }
+  
+.info {
+  font-weight: 350;
+  color:rgba(67, 67, 72);
+}
+
+.info-imp {
+  font-weight: 400;
+  color: #333333;
+}

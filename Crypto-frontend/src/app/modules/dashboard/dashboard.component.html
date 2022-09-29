@@ -1,0 +1,22 @@
+<mat-card fxFlex="0 0 31%" fxFlex.lt-md="1 0 calc(75% - 10px)" fxFlex.lt-sm="100%">
+    <app-widget-bar *ngIf="cryptocurrencies != undefined && dataLoaded" label="Number of positive and negative reviews per " [dataA]="cryptocurrencies" [positivesWeek]="positivesWeek" [negativesWeek]="negativesWeek" [positivesMonth]="positivesMonth" [negativesMonth]="negativesMonth"></app-widget-bar>
+</mat-card>
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="center" class="stats-cards">
+    <mat-card fxFlex="0 0 94%" class="pt-0" fxFlex.lt-sm="100%" class="d-flex align-items-center" style="height:22px">
+        <h6 class="info">Evolution of positive reviews percentage from <span class="info-imp">{{ day7 }}</span> to <span class="info-imp">{{ day1 }}</span> </h6>
+    </mat-card>
+    <ng-container>
+        <mat-card *ngFor="let crypto of cryptocurrencies; let i = index" fxFlex="0 0 31%" fxFlex.lt-md="0 0 calc(75% - 10px)" class="pt-2" fxFlex.lt-sm="100%" style="height:182.5px">
+            <app-widget-card *ngIf="tab" [label]="crypto.name" [abbreviation]="crypto.abbreviation" percentage="50" [data]="tab[i]['data']"></app-widget-card>
+            <div *ngIf="!tab" class="w-100 h-100 mb-2">
+                <div class="container pt-4">
+                    <div class="row d-flex justify-content-center align-items-center pt-1 pb-1">
+                        <mat-spinner strokeWidth="7"></mat-spinner>
+                    </div>
+                    <div class="row d-flex justify-content-center align-items-center pt-2 loading-text">Loading . . . Please Wait</div>
+                </div>
+            </div>
+        </mat-card>
+    </ng-container>
+    
+</div>

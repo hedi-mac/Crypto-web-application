@@ -1,0 +1,15 @@
+flask shell
+
+from src.database import db
+from sqlalchemy.ext import declarative
+from sqlalchemy.orm import sessionmaker, relation
+
+db.create_all()
+engine = db.create_engine('mysql://root:@localhost/crypto', {}) 
+Session = sessionmaker(bind=engine)
+session = Session()
+
+Base = declarative.declarative_base()
+Base.metadata.create_all(engine)
+session.commit()
+

@@ -1,0 +1,204 @@
+.stats-cards {
+  .mat-card {
+    overflow: hidden;
+  }
+}
+
+table {
+  width: 100%;
+  
+}
+
+.mat-table, .mat-paginator, .mat-row {
+  border-left:0.45px solid rgba(67, 67, 72, 0.25);
+}
+
+.co.mat-table, .mat-paginator, .mat-row, .mat-header-row {
+  border-right:0.45px solid rgba(67, 67, 72, 0.25);
+}
+
+.trend {
+  padding-left:6px;
+}
+
+.mat-header-row, .mat-row {
+  color:red;
+  height: 10px;
+}
+
+.mat-header-row {
+  height:25px;
+  border-top:0.35px solid rgba(67, 67, 72, 0.2);
+}
+
+.mat-paginator {
+  padding:0px;
+  height:55px;
+  padding-bottom: 48px;
+}
+
+.mat-paginator {
+  height:44px;
+  border-bottom:0.45px solid rgba(67, 67, 72, 0.25);
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container{
+  margin-top: -6px;
+}
+
+.mat-column-label {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10.5% !important;
+  width: 11% !important;
+  text-align: center;
+}
+.mat-column-score {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 5.5% !important;
+  width: 5.5% !important;
+  text-align: center;
+
+}
+
+.mat-column-text {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 85% !important;
+  width: 78% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-created_at {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 10% !important;
+  width: 10% !important;
+  text-align: center;
+
+}
+
+.mat-column-visits {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 30% !important;
+  width: 30% !important;
+  text-align: center;
+
+}
+
+.mat-column-url {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 25% !important;
+  width: 350px !important;
+
+}
+
+.loading-text {
+  color: #333333;
+  font-size: 18px;
+  fill: #333333;
+}
+
+.mat-spinner {
+  ::ng-deep circle {
+    stroke:rgba(124, 181, 236, 0.9) !important;
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+form{
+  padding-bottom: 30px;
+}
+.primary{
+  background: orange;
+  color: white;
+}
+
+.date-block{
+  display: flex;
+}
+
+.date-block__list{
+  flex-basis: 150px;
+  margin-right: 15px;
+}
+
+.ng5-slider::ng-deep .ng5-slider-bar {
+  background: #ffe4d1;
+  height: 2px;
+  border:1.5px solid rgba(67, 67, 72, 0.5);
+}
+.ng5-slider::ng-deep .ng5-slider-selection {
+  background: orange;
+}
+.ng5-slider::ng-deep .ng5-slider-pointer {
+  width: 18px;
+  height: 8px;
+  margin-left:12px;
+  top: auto;
+  /* to remove the default positioning */
+  bottom: 0;
+  background-color: rgba(67, 67, 72, 0.9);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 1px;
+}
+.ng5-slider::ng-deep .ng5-slider-pointer:after {
+  display: none;
+}
+.ng5-slider::ng-deep .ng5-slider-bubble {
+  flex: 0 0 8% !important;
+  width: 110px !important;
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  bottom: 14px;
+}
+.ng5-slider::ng-deep .ng5-slider-limit {
+  color: black;
+  font-weight: 550;
+  font-size: 86%;
+}
+.ng5-slider::ng-deep .ng5-slider-tick {
+  width: 1px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: #ffe4d1;
+  top: -1px;
+}
+
+.ng5-slider::ng-deep .ng5-slider-tick.ng5-slider-selected {
+  background: #ff9800;
+}
+
+.cont {
+  height:290px;
+}
+
+.nodata {
+
+  font-size: 110%;
+  color: rgba(0,0,0,.54);
+  font-weight: bold;
+}
